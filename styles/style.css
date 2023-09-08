@@ -17,4 +17,9 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: "Inter-Variable", sans-serif;
+}
+.test {
+  font-family: "PressStart2p-Regular";
+  font-weight: 400;
 }
