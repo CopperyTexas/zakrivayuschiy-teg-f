@@ -17,9 +17,54 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: "Inter-Variable", sans-serif;
+  font-size: 18px;
+  line-height: normal;
+  font-family: var(--font-family), sans-serif;  
+  font-weight: var(--text-font-weight); 
+  color:var(--accent-color);
+  background-color: var(--background-color);
+  background-image: var(--bg-image);
+  background-size: cover;
 }
-.test {
-  font-family: "PressStart2p-Regular";
-  font-weight: 400;
+.header{
+  background-color: #fff;
+  margin: 120px auto;
+  font-family: var( --accent-font-family);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items: center;
+  width: var(--main-width);
+  padding-top: clamp(120px,27%,136px);
+  border: 2px solid #000;
+}
+.main-title{
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  margin-bottom: 20px;
+}
+.header-name{
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+.theme-menu{
+  margin: 25px 0px;
+}
+.theme-menu__list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.theme-menu__item{
+  font-size: 14px;
+}
+.theme-menu__button{
+  background:transparent;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+@supports (font-variation-settings: normal){
+  .page{
+    font-weight: var(--text-font-weight);
+  }
 }
