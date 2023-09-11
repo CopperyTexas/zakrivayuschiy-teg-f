@@ -64,11 +64,51 @@
   text-transform: uppercase;
   position: relative;
 }
+.theme-menu__button::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  background: none repeat scroll 0 0 transparent;
+  height: 2px;
+  width: 0;
+  background: var(--accent-color);
+  transition: width 0.3s ease 0s;
+}
+.theme-menu__button:hover::before {
+  width: 85%;
+  left: 6px;
+}
 .theme-menu__button:disabled::before {
   content: "\25BA";
   position: absolute;
   left: -10px;
   top: -2px;
+}
+.theme-menu__button:focus {
+  opacity: 0.6;
+  outline: none;
+}
+.theme-menu__button:focus-visible {
+  animation: opacityText 0.3s ease forwards;
+}
+.theme-menu__button:disabled {
+  pointer-events: none;
+}
+.theme-menu__button:enabled:hover {
+  animation: opacityText 0.3s ease forwards;
+}
+@keyframes outline {
+  0% {
+  }
+}
+@keyframes opacityText {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 .card {
   background-color: var(--background-color);
@@ -137,6 +177,7 @@
   font-family: var(--accent-font-family);
   font-size: 14px;
 }
+
 @supports (font-variation-settings: normal) {
   .page {
     font-weight: var(--text-font-weight);
