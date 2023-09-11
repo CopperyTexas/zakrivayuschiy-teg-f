@@ -111,6 +111,11 @@
 .image-teg {
   font-family: var(--accent-font-family);
   text-align: right;
+  padding: 25px;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: -0.5px 0 var(--shadow-color), 0 0.5px var(--shadow-color),
+    0.5px 0 var(--shadow-color), 0 -0.5px var(--shadow-color);
 }
 .card__icon-button {
   background: transparent;
@@ -143,5 +148,15 @@
   }
   .card-text-box {
     padding: 25px 29px 25px 25px;
+  }
+}
+@supports (
+  (text-stroke: 0.5px var(--shadow-color)) or
+    (-webkit-text-stroke: 0.5px var(--shadow-color))
+) {
+  .image-teg {
+    -webkit-text-stroke: 0.5px var(--shadow-color);
+    text-stroke: 0.5px var(--shadow-color);
+    text-shadow: none;
   }
 }
