@@ -67,7 +67,7 @@
 .theme-menu__button::before {
   content: "";
   position: absolute;
-  bottom: 0px;
+  bottom: -1px;
   display: block;
   background: none repeat scroll 0 0 transparent;
   height: 2px;
@@ -92,16 +92,17 @@
 .theme-menu__button:focus-visible {
   animation: opacityText 0.3s ease forwards;
 }
+.theme-menu__button:focus-visible::before {
+  width: 85%;
+  left: 6px;
+}
 .theme-menu__button:disabled {
   pointer-events: none;
 }
 .theme-menu__button:enabled:hover {
   animation: opacityText 0.3s ease forwards;
 }
-@keyframes outline {
-  0% {
-  }
-}
+
 @keyframes opacityText {
   0% {
     opacity: 1;
