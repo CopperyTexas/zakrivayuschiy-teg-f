@@ -67,7 +67,7 @@
 .theme-menu__button::before {
   content: "";
   position: absolute;
-  bottom: -1px;
+  bottom: -2px;
   display: block;
   background: none repeat scroll 0 0 transparent;
   height: 2px;
@@ -82,8 +82,9 @@
 .theme-menu__button:disabled::before {
   content: "\25BA";
   position: absolute;
-  left: -10px;
+  left: -14px;
   top: -2px;
+  animation: arrow 0.5s ease-in-out infinite alternate;
 }
 .theme-menu__button:focus {
   opacity: 0.6;
@@ -103,14 +104,6 @@
   animation: opacityText 0.3s ease forwards;
 }
 
-@keyframes opacityText {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
-  }
-}
 .card {
   background-color: var(--background-color);
   width: var(--main-width);
@@ -143,11 +136,74 @@
   justify-content: center;
   align-self: flex-end;
 }
-.card__like-button {
+
+.card__like-button { 
+  position: relative;
+  cursor: pointer;
   border: 2px solid var(--accent-color);
   background: transparent;
   width: 118px;
   padding: 9px 0px;
+  overflow: hidden;
+
+}
+.card__like-button::before{
+  position: absolute;
+  content: "";
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  animation: run2 0.5s ease-in-out both;
+
+}
+.card__like-button:hover::before{
+  animation: run 0.5s ease-in-out;
+}
+@keyframes run2{
+  0%{
+    left: 0;
+    transform: translateX(0);
+  }
+  100%{
+    left: 0;
+    transform: translateX(-100%);
+  }
+}
+@keyframes run{
+  0%{
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100%{
+    left: 0;
+    transform: translateX(0);
+  }
+}
+.card__like-button:focus{
+  outline: none;
+  }
+.card__like-button:focus-visible{
+  box-shadow:2px 2px 0px var(--accent-color);
+  animation: shadow 0.3s ease forwards;
+}
+.save-button:focus{
+  outline: none;
+}
+.save-button:focus-visible{
+  box-shadow:2px 2px 0px var(--accent-color);
+  animation: shadow 0.3s ease forwards;
+}
+@keyframes shadow{
+  0%{
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateX(2px);
+    transform: translateY(2px);
+  }
 }
 .image-teg {
   font-family: var(--accent-font-family);
@@ -168,6 +224,7 @@
   aspect-ratio: 1;
 }
 .save-button {
+  position: relative;
   padding: 14px;
   background: var(--background-color);
   border: 2px solid var(--accent-color);
@@ -177,6 +234,21 @@
   align-items: center;
   font-family: var(--accent-font-family);
   font-size: 14px;
+  overflow: hidden;
+}
+.save-button::before{
+  position: absolute;
+  content: "";
+  left: 0px;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  animation: run2 0.5s ease-in-out both;
+}
+.save-button:hover::before{
+  animation: run 0.5s ease-in-out;
 }
 
 @supports (font-variation-settings: normal) {
@@ -200,5 +272,21 @@
     -webkit-text-stroke: 0.5px var(--shadow-color);
     text-stroke: 0.5px var(--shadow-color);
     text-shadow: none;
+  }
+}
+@keyframes arrow{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(4px);
+  }
+}
+@keyframes opacityText {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
   }
 }
