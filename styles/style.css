@@ -262,6 +262,7 @@ dialog{
   padding: 34px;
   max-inline-size: 357px;
   min-inline-size: 341px;
+  max-block-size: 193px;
   position: fixed;
   inset: 0;
   border-color: var(--accent-color);
