@@ -79,12 +79,19 @@
     </section>
     <section class="save">
       <button class="save-button">
-        <svg class="save-icon">
+        <svg class="save-icon" width="21" height="21">
           <use href="#save">
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
     </section>
+    <dialog class="dialog" open>
+      <svg class="save-icon">
+        <use href="#save" viewBox="0 0 5 5">
+      </svg>
+      <span class="dialog-text">вставьте дискету, чтобы продолжить</span>
+      <button class="save-button"><span class="button__text">ОК</span></button>
+    </dialog>
   </main>
   <script src="./scripts/like.js"></script>
 </body>

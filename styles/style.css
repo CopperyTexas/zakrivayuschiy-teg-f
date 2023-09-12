@@ -136,7 +136,9 @@
   justify-content: center;
   align-self: flex-end;
 }
-
+.card__icon-button:focus {
+  outline: none;
+}
 .card__like-button {
   position: relative;
   cursor: pointer;
@@ -198,6 +200,16 @@
 .save-icon {
   width: 21px;
   aspect-ratio: 1;
+}
+.dialog {
+  padding: 32px;
+}
+.dialog-text {
+  color: var(--accent-color);
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  line-height: 150%;
+  max-width: 234px;
 }
 .save-button {
   position: relative;
