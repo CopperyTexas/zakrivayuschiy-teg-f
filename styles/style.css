@@ -145,6 +145,7 @@
   width: 118px;
   padding: 9px 0px;
   overflow: hidden;
+  transition: 0.3s ease;
 }
 .card__like-button::before {
   position: absolute;
@@ -157,62 +158,27 @@
   animation: run2 0.5s ease-in-out both;
 }
 .button__text {
-  z-index: 2;
   color: var(--button-color);
   mix-blend-mode: difference;
 }
 .save-icon {
-  z-index: 2;
   color: var(--floppy-color);
   mix-blend-mode: difference;
 }
 .card__like-button:hover::before {
   animation: run 0.5s ease-in-out;
 }
-@keyframes run2 {
-  0% {
-    left: 0;
-    transform: translateX(0);
-  }
-  100% {
-    left: 0;
-    transform: translateX(-100%);
-  }
-}
-@keyframes run {
-  0% {
-    left: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    left: 0;
-    transform: translateX(0);
-  }
-}
+
 .card__like-button:focus {
   outline: none;
-}
-.card__like-button:focus-visible {
   box-shadow: 2px 2px 0px var(--accent-color);
-  animation: shadow 0.3s ease forwards;
 }
+
 .save-button:focus {
   outline: none;
-}
-.save-button:focus-visible {
   box-shadow: 2px 2px 0px var(--accent-color);
-  animation: shadow 0.3s ease forwards;
 }
-@keyframes shadow {
-  0% {
-    transform: translateX(0);
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateX(2px);
-    transform: translateY(2px);
-  }
-}
+
 .image-teg {
   font-family: var(--accent-font-family);
   text-align: right;
@@ -243,6 +209,7 @@
   font-family: var(--accent-font-family);
   font-size: 14px;
   overflow: hidden;
+  transition: 0.3s ease;
 }
 .save-button::before {
   position: absolute;
@@ -296,5 +263,35 @@
   }
   100% {
     opacity: 0.6;
+  }
+}
+@keyframes run2 {
+  0% {
+    left: 0;
+    transform: translateX(0);
+  }
+  100% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}
+@keyframes run {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateX(2px);
+    transform: translateY(2px);
   }
 }
