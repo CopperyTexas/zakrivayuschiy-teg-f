@@ -171,14 +171,16 @@
 
 .card__like-button:focus {
   outline: none;
+}
+.card__like-button:focus-visible {
   box-shadow: 2px 2px 0px var(--accent-color);
 }
-
 .save-button:focus {
   outline: none;
+}
+.save-button:focus-visible {
   box-shadow: 2px 2px 0px var(--accent-color);
 }
-
 .image-teg {
   font-family: var(--accent-font-family);
   text-align: right;
@@ -294,4 +296,7 @@
     transform: translateX(2px);
     transform: translateY(2px);
   }
+}
+.sparks {
+  opacity: 0;
 }
