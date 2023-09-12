@@ -264,6 +264,7 @@ dialog{
   min-inline-size: 341px;
   position: fixed;
   inset: 0;
+  border-color: var(--accent-color);
 }
 dialog[open]{
   display: grid;
