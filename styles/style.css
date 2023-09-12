@@ -13,7 +13,6 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -26,6 +25,7 @@
   background-image: var(--bg-image);
   background-size: cover;
 }
+/* --------------------------- Header style start ------------------------------ */
 .header {
   background-color: var(--background-color);
   margin: 120px auto 108px;
@@ -57,6 +57,9 @@
 .theme-menu__item {
   font-size: 14px;
 }
+/* --------------------------- Header style end ------------------------------ */
+
+/* --------------------------- Header button style start---------------------- */
 .theme-menu__button {
   background: transparent;
   border: none;
@@ -73,18 +76,24 @@
   height: 2px;
   width: 0;
   background: var(--accent-color);
-  transition: width 0.3s ease 0s;
+  transition: width 0.3s ease;
 }
+
 .theme-menu__button:hover::before {
   width: 85%;
   left: 6px;
 }
-.theme-menu__button:disabled::before {
+.theme-menu__button:disabled::after {
   content: "\25BA";
   position: absolute;
   left: -14px;
   top: -2px;
   animation: arrow 0.5s ease-in-out infinite alternate;
+}
+
+
+.theme-menu__button:enabled:hover {
+  animation: opacityText 0.3s ease forwards;
 }
 .theme-menu__button:focus {
   opacity: 0.6;
@@ -97,13 +106,12 @@
   width: 85%;
   left: 6px;
 }
-.theme-menu__button:disabled {
+.theme-menu__button:disabled::before {
   pointer-events: none;
 }
-.theme-menu__button:enabled:hover {
-  animation: opacityText 0.3s ease forwards;
-}
+/* --------------------------- Header button style end----------------------- */
 
+/* --------------------------- Card style start------------------------------ */
 .card {
   background-color: var(--background-color);
   width: var(--main-width);
@@ -114,14 +122,23 @@
   font-size: 18px;
   padding: 10px;
 }
-.card-img {
-  display: block;
-  width: var(--main-width);
-  font-size: 14px;
-  aspect-ratio: 1;
-  background-image: url(../images/HTML_1.png);
-  background-position: center;
-  background-size: cover;
+.card-img-box{
+position: relative;
+}
+.card-img{
+ width: 100%;
+}
+.image-teg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  font-family: var(--accent-font-family);
+  padding: 25px;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: -0.5px 0 var(--shadow-color), 0 0.5px var(--shadow-color),
+    0.5px 0 var(--shadow-color), 0 -0.5px var(--shadow-color);
 }
 .card-text-box {
   display: flex;
@@ -129,6 +146,9 @@
   gap: 27px;
   padding: 25px;
 }
+/* --------------------------- Card style end------------------------------ */
+
+/* --------------------------- Card button style start--------------------- */
 .button-box {
   font-family: var(--accent-font-family);
   font-size: 14px;
@@ -183,15 +203,7 @@
 .save-button:focus-visible {
   box-shadow: 2px 2px 0px var(--accent-color);
 }
-.image-teg {
-  font-family: var(--accent-font-family);
-  text-align: right;
-  padding: 25px;
-  mix-blend-mode: hard-light;
-  opacity: 0.5;
-  text-shadow: -0.5px 0 var(--shadow-color), 0 0.5px var(--shadow-color),
-    0.5px 0 var(--shadow-color), 0 -0.5px var(--shadow-color);
-}
+
 .card__icon-button {
   background: transparent;
   border: none;
@@ -201,17 +213,8 @@
   width: 21px;
   aspect-ratio: 1;
 }
-.dialog {
-  padding: 32px;
-}
-.dialog-text {
-  color: var(--accent-color);
-  font-family: var(--accent-font-family);
-  font-size: 14px;
-  line-height: 150%;
-  max-width: 234px;
-}
 .save-button {
+  cursor: pointer;
   position: relative;
   padding: 14px;
   background: var(--background-color);
@@ -239,76 +242,61 @@
 .save-button:hover::before {
   animation: run 0.5s ease-in-out;
 }
+/* --------------------------- Card button style end----------------------- */
 
-@supports (font-variation-settings: normal) {
-  .page {
-    font-weight: var(--text-font-weight);
-  }
+/* --------------------------- Dialog window style start------------------- */
+.dialog-text {
+  color: var(--accent-color);
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  line-height: 150%;
+  max-width: 234px;
 }
-@media (width <= 375px) {
-  .save-button {
-    flex-direction: column;
-  }
-  .card-text-box {
-    padding: 25px 29px 25px 25px;
-  }
+.dialog-icon{
+  width: 39px;
+  height: 39px;
 }
-@supports (
-  (text-stroke: 0.5px var(--shadow-color)) or
-    (-webkit-text-stroke: 0.5px var(--shadow-color))
-) {
-  .image-teg {
-    -webkit-text-stroke: 0.5px var(--shadow-color);
-    text-stroke: 0.5px var(--shadow-color);
-    text-shadow: none;
-  }
+dialog{
+  background-color: var(--background-color);
+  border-width: 2px;
+  padding: 34px;
+  max-inline-size: 357px;
+  min-inline-size: 341px;
+  position: fixed;
+  inset: 0;
 }
-@keyframes arrow {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(4px);
-  }
+dialog[open]{
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  grid-template-rows: 1fr, 38px;
+  column-gap: 20px;
+  row-gap:30px ;
+  text-transform: uppercase;
+  align-items: center;
 }
-@keyframes opacityText {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
-  }
+.dialog_button-grid{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: inline;
+  margin: 0;
+  max-inline-size: 293px;
+  min-inline-size: 257px;
+  padding: 9px;
 }
-@keyframes run2 {
-  0% {
-    left: 0;
-    transform: translateX(0);
-  }
-  100% {
-    left: 0;
-    transform: translateX(-100%);
-  }
+.dialog_button-grid:before{
+  width: 0;
+  animation: run2 0.5s ease-in-out both;
 }
-@keyframes run {
-  0% {
-    left: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    left: 0;
-    transform: translateX(0);
-  }
+.dialog_button-grid:hover::before{
+  width: 100%;
 }
-@keyframes shadow {
-  0% {
-    transform: translateX(0);
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateX(2px);
-    transform: translateY(2px);
-  }
+dialog::backdrop{
+  opacity: 0.75;
+  background: var(--background-color, #000);
 }
+/* --------------------------- Dialog window style end----------------------- */
+
+/* --------------------------- Like icon style start------------------------- */
 .sparks {
   opacity: 0;
 }
@@ -360,6 +348,74 @@
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s ease-in 0.3s;
 }
+/* --------------------------- Like icon style end------------------------- */
+
+/* --------------------------- Filter img style start---------------------- */
+
+.brightness{
+  filter: brightness(370%);
+}
+.contrast{
+  filter: contrast(20%);
+}
+.blur{
+  filter: blur(0.3em);
+}
+.opacity{
+  filter: opacity(0.4);
+}
+.grayscale{
+  filter: grayscale(0.9);
+}
+.saturate{
+  filter: saturate(250%);
+}
+.multi{
+  filter: sepia(80%) invert(0.7);
+}
+/* --------------------------- Filter img style end------------------------- */
+
+/* --------------------------- Keyframes style start------------------------ */
+
+@keyframes opacityText {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+@keyframes run2 {
+  0% {
+    left: 0;
+    transform: translateX(0);
+  }
+  100% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}
+@keyframes run {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateX(2px);
+    transform: translateY(2px);
+  }
+}
+
 @keyframes changeHeart {
   0% {
     scale: 1;
@@ -382,3 +438,37 @@
     opacity: 0;
   }
 }
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(4px);
+  }
+}
+/* --------------------------- Keyframesstyle end----------------------- */
+
+/* --------------------------- Other------------------------------------ */
+@supports (font-variation-settings: normal) {
+  .page {
+    font-weight: var(--text-font-weight);
+  }
+}
+
+@supports (
+    (-webkit-text-stroke: 0.5px var(--shadow-color))
+) {
+  .image-teg {
+    -webkit-text-stroke: 0.5px var(--shadow-color);
+    text-shadow: none;
+  }
+}
+@media (width <= 375px) {
+  .save-button {
+    flex-direction: column;
+  }
+  .card-text-box {
+    padding: 25px 29px 25px 25px;
+  }
+}
+
