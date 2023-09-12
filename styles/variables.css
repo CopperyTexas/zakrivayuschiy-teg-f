@@ -7,7 +7,8 @@
   --background-color: #fff;
   --accent-color: #000;
   --shadow-color: #fff;
-  --floppy-color: #000;
+  --button-color: #fff;
+  --floppy-color: #fff;
   --bg-image: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
     repeating-linear-gradient(to bottom, #d3d3d3, transparent 2px),
     repeating-linear-gradient(to bottom, #e7e7e7, #1a1a1a);

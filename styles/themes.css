@@ -10,6 +10,7 @@
   --accent-color: #00cc14;
   --text-font-weight: 465;
   --title-font-weight: 785;
+  --button-color: #00cc14;
   --floppy-color: #00cc14;
   --bg-image: repeating-linear-gradient(to right, #000, transparent 2px),
     repeating-linear-gradient(to bottom, #000, transparent 2px),
@@ -22,6 +23,7 @@
     --accent-color: #00cc14;
     --text-font-weight: 465;
     --title-font-weight: 785;
+    --button-color: #00cc14;
     --floppy-color: #00cc14;
     --bg-image: repeating-linear-gradient(to right, #000, transparent 2px),
       repeating-linear-gradient(to bottom, #000, transparent 2px),
@@ -29,12 +31,13 @@
   }
 }
 :root.theme-light {
+  --button-color: #fff;
   --shadow-color: #fff;
   --background-color: #fff;
   --accent-color: #000;
   --text-font-weight: 400;
   --title-font-weight: 700;
-  --floppy-color: #000;
+  --floppy-color: #fff;
   --bg-image: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
     repeating-linear-gradient(to bottom, #d3d3d3, transparent 2px),
     repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);

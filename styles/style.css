@@ -137,7 +137,7 @@
   align-self: flex-end;
 }
 
-.card__like-button { 
+.card__like-button {
   position: relative;
   cursor: pointer;
   border: 2px solid var(--accent-color);
@@ -145,9 +145,8 @@
   width: 118px;
   padding: 9px 0px;
   overflow: hidden;
-
 }
-.card__like-button::before{
+.card__like-button::before {
   position: absolute;
   content: "";
   bottom: 0;
@@ -156,51 +155,60 @@
   height: 100%;
   background-color: var(--accent-color);
   animation: run2 0.5s ease-in-out both;
-
 }
-.card__like-button:hover::before{
+.button__text {
+  z-index: 2;
+  color: var(--button-color);
+  mix-blend-mode: difference;
+}
+.save-icon {
+  z-index: 2;
+  color: var(--floppy-color);
+  mix-blend-mode: difference;
+}
+.card__like-button:hover::before {
   animation: run 0.5s ease-in-out;
 }
-@keyframes run2{
-  0%{
+@keyframes run2 {
+  0% {
     left: 0;
     transform: translateX(0);
   }
-  100%{
+  100% {
     left: 0;
     transform: translateX(-100%);
   }
 }
-@keyframes run{
-  0%{
+@keyframes run {
+  0% {
     left: 0;
     transform: translateX(-100%);
   }
-  100%{
+  100% {
     left: 0;
     transform: translateX(0);
   }
 }
-.card__like-button:focus{
-  outline: none;
-  }
-.card__like-button:focus-visible{
-  box-shadow:2px 2px 0px var(--accent-color);
-  animation: shadow 0.3s ease forwards;
-}
-.save-button:focus{
+.card__like-button:focus {
   outline: none;
 }
-.save-button:focus-visible{
-  box-shadow:2px 2px 0px var(--accent-color);
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0px var(--accent-color);
   animation: shadow 0.3s ease forwards;
 }
-@keyframes shadow{
-  0%{
+.save-button:focus {
+  outline: none;
+}
+.save-button:focus-visible {
+  box-shadow: 2px 2px 0px var(--accent-color);
+  animation: shadow 0.3s ease forwards;
+}
+@keyframes shadow {
+  0% {
     transform: translateX(0);
     transform: translateY(0);
   }
-  100%{
+  100% {
     transform: translateX(2px);
     transform: translateY(2px);
   }
@@ -236,7 +244,7 @@
   font-size: 14px;
   overflow: hidden;
 }
-.save-button::before{
+.save-button::before {
   position: absolute;
   content: "";
   left: 0px;
@@ -247,7 +255,7 @@
   background-color: var(--accent-color);
   animation: run2 0.5s ease-in-out both;
 }
-.save-button:hover::before{
+.save-button:hover::before {
   animation: run 0.5s ease-in-out;
 }
 
@@ -274,11 +282,11 @@
     text-shadow: none;
   }
 }
-@keyframes arrow{
-  0%{
+@keyframes arrow {
+  0% {
     transform: translateX(0);
   }
-  100%{
+  100% {
     transform: translateX(4px);
   }
 }
