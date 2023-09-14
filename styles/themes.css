@@ -13,6 +13,7 @@
   --title-font-weight: 785;
   --button-color: #00cc14;
   --floppy-color: #00cc14;
+  --border-img:2px solid #00cc14;
   --bg-image: repeating-linear-gradient(to right, #000, transparent 2px),
     repeating-linear-gradient(to bottom, #000, transparent 2px),
     repeating-linear-gradient(to bottom, #007f0c, #004306);
@@ -27,6 +28,7 @@
     --title-font-weight: 785;
     --button-color: #00cc14;
     --floppy-color: #00cc14;
+    --border-img:2px solid #00cc14;
     --bg-image: repeating-linear-gradient(to right, #000, transparent 2px),
       repeating-linear-gradient(to bottom, #000, transparent 2px),
       repeating-linear-gradient(to bottom, #007f0c, #004306);
@@ -41,6 +43,7 @@
   --text-font-weight: 400;
   --title-font-weight: 700;
   --floppy-color: #fff;
+  --border-img:2px solid transparent;
   --bg-image: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
     repeating-linear-gradient(to bottom, #d3d3d3, transparent 2px),
     repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
