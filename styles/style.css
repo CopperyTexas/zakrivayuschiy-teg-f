@@ -29,7 +29,7 @@
   background-attachment: fixed;
 }
 
-.save{
+.save {
   margin-bottom: 105px;
 }
 /* --------------------------- Header style start ------------------------------ */
@@ -145,7 +145,7 @@
   position: relative;
 }
 
-.card-box{
+.card-box {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -438,7 +438,7 @@ dialog::backdrop {
     scale: 1.3;
   }
 
-  .card-box{
+  .card-box {
     gap:49px;
   }
 
